@@ -102,8 +102,7 @@ export default function Footer2({ parentClass = "" }) {
           <div className="footer-bottom">
             <p>
               Copyright © {new Date().getFullYear()}{" "}
-              <span className="fw-7">{`${siteContent.agent.name} - ${siteContent.agent.title}`}</span>. Website by{' '}
-              <a href="https://salesgenius.co/" target="_blank" rel="noopener noreferrer">SalesGenius</a>
+              <span className="fw-7">{`${siteContent.agent.name} - ${siteContent.agent.title}`}</span>. Website by Arslan.
             </p>
             {/* Added Legal Links */}
             <div className="footer-legal-links" style={{ marginLeft: '20px', display: 'flex', gap: '15px' }}>
