@@ -12,7 +12,7 @@ import ThemeController from "@/components/common/ThemeController";
 import Login from "@/components/modals/Login";
 import Register from "@/components/modals/Register";
 
-export default function RootLayout({ children }) {
+export default function ClientLayout({ children }) {
   const pathname = usePathname();
   if (typeof window !== "undefined") {
     import("bootstrap/dist/js/bootstrap.esm").then((module) => {
@@ -72,21 +72,20 @@ export default function RootLayout({ children }) {
     window.addEventListener("scroll", handleSticky);
   }, []);
   return (
-    <html lang="en">
-      <body className="popup-loader">
-        {/* Conditionally apply theme based on pathname */}
-        {pathname === '/' ? (
-          <ThemeController themeColor="light-theme" />
-        ) : (
-          <ThemeController themeColor="dark-theme" />
-        )}
-        {children}
-        <MobileMenu />
-        <BackToTop />
-        {/* Removed SettingsHandler component */}
-        <Login />
-        <Register />
-      </body>
-    </html>
+    <>
+      {/* Conditionally apply theme based on pathname */}
+      {pathname === '/' ? (
+        <ThemeController themeColor="light-theme" />
+      ) : (
+        <ThemeController themeColor="dark-theme" />
+      )}
+      {children}
+      <MobileMenu />
+      <BackToTop />
+      {/* Removed SettingsHandler component */}
+      <Login />
+      <Register />
+    </>
   );
 }
+
